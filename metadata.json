@@ -1,0 +1,6 @@
+{
+  "name": "Quiz TDAH e Autismo",
+  "description": "Quiz indicativo de triagem sobre sinais de TDAH e autismo em crianças e adolescentes (4 a 15 anos) para pais e responsáveis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
