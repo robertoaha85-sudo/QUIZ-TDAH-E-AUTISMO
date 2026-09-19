@@ -33,8 +33,8 @@ export default async function handler(req, res) {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
-        'x-api-key': apiKey,
         'Authorization': apiKey,
+        'x-api-key': apiKey,
       },
     });
 
@@ -42,7 +42,7 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       return res.status(response.status).json({
-        error: data.message || 'Erro ao consultar status do pagamento na Cakto.',
+        error: data.message || data.error || data.detail || 'Erro ao consultar status do pagamento na Cakto.',
         details: data,
       });
     }

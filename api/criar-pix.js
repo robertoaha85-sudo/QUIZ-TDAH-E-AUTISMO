@@ -43,7 +43,7 @@ export default async function handler(req, res) {
     }
 
     // Montar payload para a API da Cakto
-    // Offer ID fornecido: vIuE4fW1lGQNa1M3k1M4u91iOk06UTVZltPJUtNN
+    // Offer ID: vIuE4fW1lGQNa1M3k1M4u91iOk06UTVZltPJUtNN
     const payload = {
       offer_id: 'vIuE4fW1lGQNa1M3k1M4u91iOk06UTVZltPJUtNN',
       payment_method: 'pix',
@@ -63,8 +63,8 @@ export default async function handler(req, res) {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'x-api-key': apiKey,
         'Authorization': apiKey,
+        'x-api-key': apiKey,
       },
       body: JSON.stringify(payload),
     });
@@ -74,7 +74,7 @@ export default async function handler(req, res) {
     if (!response.ok) {
       console.error('Erro retornado pela API da Cakto:', data);
       return res.status(response.status).json({
-        error: data.message || data.error || 'Erro ao processar transação na Cakto.',
+        error: data.message || data.error || data.detail || 'Erro ao processar transação na Cakto.',
         details: data,
       });
     }
