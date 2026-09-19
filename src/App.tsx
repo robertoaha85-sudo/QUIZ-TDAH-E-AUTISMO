@@ -252,6 +252,16 @@ export default function App() {
       {screen === 'paywall' && (
         <PaywallScreen
           sessionId={currentSessionId}
+          onPaymentSuccess={() => {
+            if (currentSessionId) {
+              const updated = markSessionAsPaid(currentSessionId);
+              if (updated) {
+                setActiveSession(updated);
+              }
+            }
+            setScreen('result');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           onViewResult={handleCheckIfPaid}
           onSimulateDemoPay={handleSimulateDemoPay}
         />
