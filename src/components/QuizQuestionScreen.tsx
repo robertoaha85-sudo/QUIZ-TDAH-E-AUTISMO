@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Check, ArrowRight, MessageSquare, Brain } from 'lucide-react';
 import { Question } from '../types';
 import { QUESTION_OPTIONS } from '../data/questions';

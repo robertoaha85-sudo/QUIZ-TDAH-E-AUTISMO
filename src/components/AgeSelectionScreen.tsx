@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Check, Sparkles, School, GraduationCap } from 'lucide-react';
 import { AgeGroup } from '../types';
 import { Header } from './Header';

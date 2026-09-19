@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Sparkles, FileText, CheckCircle2 } from 'lucide-react';
 import { LOADING_SECONDS, BRAND_NAME } from '../config';
 
