@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
   res.setHeader(
     'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization, x-api-key'
   );
 
   if (req.method === 'OPTIONS') {
@@ -32,8 +32,9 @@ export default async function handler(req, res) {
     const response = await fetch(`https://api.cakto.com.br/public_api/payments/${id}`, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${apiKey}`,
-        Accept: 'application/json',
+        'Accept': 'application/json',
+        'x-api-key': apiKey,
+        'Authorization': apiKey,
       },
     });
 
